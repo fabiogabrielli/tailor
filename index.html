@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="cssTAILOR.css">
+    <title>Simulador WGA Advisors</title>
+    <link rel="icon" href="https://tailorinsurance.com.br/wp-content/uploads/2023/10/cropped-favicon-tailor-32x32.png" sizes="32x32" />
+    
+    <!-- CSS do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+  
+</head>
+<body>
+
+<section id="geral" class="geral">
+    <div class="stagePrincipal">
+        <div class="calculadora">
+            <img class="logoTAILOR" src="imgs/Corporate.svg" alt="logo TAILOR">
+            <h1>Descubra o impacto real de uma fatura NÃO paga para a sua empresa</h1>
+            <div class="slider-container">
+                Faturamento Anual: R$ <span id="faturamentoOutput">0</span><br>
+                <input type="range" min="100000000" max="10000000000" step="5000000" value="100000000" id="faturamentoSlider">
+            </div>
+
+            <div class="slider-container">
+                Lucro Operacional: <span id="lucroOutput">0</span>%<br>
+                <input type="range" min="0" max="100" step="1" value="0" id="lucroSlider">
+            </div>
+
+            <div class="slider-container">
+                Perda Estimada: R$ <span id="perdaOutput">0</span><br>
+                <input type="range" min="0" max="500000000" step="10000" value="0" id="perdaSlider">
+            </div>
+
+            <div class="slider-container">
+                Taxa de Juros (anual): <span id="jurosOutput">0</span>%<br>
+                <input type="range" min="0" max="50" step="0.1" value="0" id="jurosSlider">
+            </div>
+            <button onclick="calculate()">Calcular</button><br><br>
+            <div class="divPower">
+                <div class="power">powered by</div>
+                <a href="https://www.wgaadvisors.com.br"><img class="logoWGA" src="imgs/logoWGA.svg" alt="logo WGA Group"></a>
+            </div>
+        </div>
+        <div class="internoImpactos">
+            <h1>INSIGHTS: Seis Impactos Estratégicos através do Seguro de Crédito</h1>
+            <div class="impacto">
+                <i class="fa-solid fa-chart-line"></i>
+                <h1>ALAVANCAGEM DE VENDAS</h1>
+                <h4>Proporcione prazos mais vantajosos e eleve limites de crédito impulsionando suas vendas e protegendo o seu fluxo de caixa.</h4>
+            </div>
+            <div class="impacto">
+                <i class="fa-solid fa-user-group"></i>
+                <h1>CRESCIMENTO EM CLIENTES-CHAVE</h1>
+                <h4>Intensifique suas vendas para os principais clientes, fornecendo mais crédito e prazo tornando-se mais competitivo e fortalecendo relações comerciais.</h4>
+            </div>
+            <div class="impacto">
+                <i class="fa-regular fa-handshake"></i>
+                <h1>CONQUISTA DE NOVOS MERCADOS</h1>
+                <h4>Avalie riscos de forma precisa, pré-qualifique clientes e garanta proteção extra, permitindo que você explore novos mercados com confiança e segurança.</h4>
+            </div>
+            <div class="impacto">
+                <i class="fa-solid fa-globe"></i>
+                <h1>EXPANSÃO INTERNACIONAL SEGURA</h1>
+                <h4>Tome decisões estratégicas e ofereça condições competitivas em mercados internacionais, eliminando a necessidade de cartas de crédito e pagamentos à vista.</h4>
+            </div>
+            <div class="impacto">
+                <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                <h1>FINANCIAMENTO ACESSÍVEL</h1>
+                <h4>Utilize recebíveis segurados como garantias, conseguindo acesso a capital de giro com taxas mais atrativas.</h4>
+            </div>
+            <div class="impacto">
+                <i class="fa-regular fa-money-bill-1"></i>
+                <h1>FLUXO DE CAIXA ESTÁVEL E RENTÁVEL</h1>
+                <h4>Mitigue o risco de inadimplência e mora, mantendo um fluxo de caixa saudável e maximizando a rentabilidade do seu negócio.</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MODAL -->
+
+<div id="myModal">
+    <div class="stageMyModal">
+        <div class="internoModal">
+            <h1>Resultado da Simulação</h1>
+            <div id="result"></div>
+            <button id="novoCalculo" onclick="fechaModal()">Novo Calculo</button>
+            <h6>Caso queira alavancar as vendas da sua empresa e reduzir riscos de inadimplência, <a class="linkDownload" href="docs/Questionário-TAILOR-TradeCredit.xlsx"><b>clique aqui</b></a>, preencha o questionário e entre em contato com seu corretor</h6>
+        </div>
+        <div class="descricao">
+            <h1>Observações</h1>
+            <p><strong>Custo de Oportunidade:</strong> Avalia o valor direto de uma perda estimada e o custo de oportunidade associado, calculado com base na taxa de juros escolhida, refletindo o retorno perdido que o capital poderia ter gerado.</p>
+            <p><strong>Prejuízo Total:</strong> Combina o valor estimado da perda com o custo de oportunidade para fornecer uma visão do impacto financeiro total sobre o negócio.</p>
+            <p><strong>Tempo de Recuperação (meses)</strong> Estima quantos meses serão necessários para que a empresa recupere a perda, considerando seu lucro operacional mensal, oferecendo uma noção da resiliência financeira da empresa.</p>
+            <p><strong>Classificações das Perdas: </strong><br>
+            - Perda Leve: até 5% do lucro anual.<br>
+            - Perda Moderada: entre 5% e 20% do lucro anual.<br>
+            - Perda Significativa: entre 20% e 50% do lucro anual.<br>
+            - Perda Crítica: mais de 50% do lucro anual.<br>
+            </p>
+            <p><strong>Disclaimer: </strong> Os cálculos são apenas estimativas e podem não refletir a realidade de sua empresa.</p>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript e dependências do Bootstrap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<!-- Inclusão do jQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<!-- Inclusão do JavaScript Próprio -->
+<script src="js.js"></script>
+
+<!-- Inclusão do FONT AWESOME -->
+<script src="https://kit.fontawesome.com/0cb18bf594.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
