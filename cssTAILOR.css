@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #001576;
+}
+
+
+.geral {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 5% 10%;
+    background-color: #001576;
+}
+
+.stagePrincipal {
+    display: flex;
+}
+
+/* CALCULADORA */
+
+.logoTAILOR {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.calculadora {
+    width: 40%;
+    background-color: white;
+    padding: 5%;
+}
+
+.calculadora h1 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #001576;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.calculadora input {
+    width: 100%;
+}
+
+.slider-container {
+    font-size: 0.9rem;
+    margin-top: 2%;
+}
+
+.calculadora button {
+    min-width: 20%;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid black;
+    font-weight: 400;
+    padding: 6px 30px;
+    margin-top: 20px;
+}
+
+.calculadora button:hover {
+    text-decoration: underline;
+}
+
+.divPower {
+    display: flex;
+    align-items: baseline;
+}
+
+.power {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+}
+
+.logoWGA {
+    height: 20px;
+    padding-left: 5px;
+}
+
+
+/* IMPACTOS */
+
+.internoImpactos {
+    background-color: white;
+    width: 70%;
+    min-height: 70%;
+    background-color: white;
+    padding: 4%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.internoImpactos > h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #001576;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 20px;
+}
+
+.impacto {
+    border: 1px solid black;
+    width: 32%;
+    padding: 2%;
+    margin: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.impacto i {
+    margin-bottom: 6px;
+    font-size: 3rem;
+}
+
+.impacto h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    color: #001576;
+    text-align: center;
+}
+
+.impacto h4 {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* RESULTADOS */
+
+#myModal {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 10%;
+}
+
+.stageMyModal {
+    display: flex;
+}
+
+.internoModal {
+    width: 60%;
+    min-height: 80%;
+    background-color: white;
+    padding: 5%;
+}
+
+.internoModal h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #001576;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.internoModal button {
+    min-width: 20%;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid black;
+    font-weight: 400;
+    padding: 6px 30px;
+}
+
+.internoModal button:hover {
+    text-decoration: underline;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.internoModal h6 {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.internoModal img {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.prejuizo {
+    color: red;
+}
+
+/* DESCRIÇÃO */
+
+.descricao {
+    background-color: white;
+    width: 40%;
+    min-height: 80%;
+    padding: 5%;
+}
+
+.descricao p {
+    font-size: 0.8rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.descricao h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #001576;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.btnFechar {
+    display: none;
+}
+
+
+
+/* ------------------------RESPONSIVO------------------------ */
+
+
+@media screen and (max-width: 600px){
+
+    .geral {
+        height: auto;
+        padding: 5%;
+    }
+    
+    .stagePrincipal {
+        display: block;
+    }
+
+    /* CALCULADORA */
+
+    .logoTAILOR{
+        width: 200px;
+        margin-bottom: 20px;
+        align-self: center;
+    }
+
+    .calculadora {
+        width: 100%;
+        margin-bottom: 5%;
+        padding: 7%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .calculadora h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .calculadora button {
+        width: 50%;
+    }
+
+    /* IMPACTOS */
+
+    .internoImpactos {
+        width: 100%;
+    }
+
+    .internoImpactos > h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .impacto {
+        width: 100%;
+        margin-bottom: 5%;
+        padding: 7%;
+    }
+
+    /* RESULTADOS */
+
+    #myModal {
+        position: static;
+        padding: 5%;
+        width: 100vw;
+        overflow: scroll !important;
+        display: none;
+        align-items: flex-start;
+        background-color: #001576;
+    }
+
+    .stageMyModal {
+        display: block;
+    }
+    
+    .internoModal {
+        width: 100%;
+        padding: 7%;
+        height: 100%;
+        margin-bottom: 5%;
+    }
+
+    /* DESCRIÇÃO */
+
+    .descricao {
+        width: 100%;
+        padding: 7%;
+        height: 100%;
+    }
+
+    .btnFechar {
+        display: block;
+    }
+
+    .btnFechar {
+        min-width: 20%;
+        font-family: 'Lato', sans-serif;
+        border: 1px solid black;
+        font-weight: 400;
+        padding: 6px 30px;
+        margin-top: 20px;
+    }
+    
+    .btnFechar:hover {
+        text-decoration: underline;
+    }
+    
+
+}
