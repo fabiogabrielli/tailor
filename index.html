@@ -19,11 +19,13 @@
 <section id="geral" class="geral">
     <div class="stagePrincipal">
         <div class="calculadora">
-            <img class="logoTAILOR" src="imgs/Corporate.svg" alt="logo TAILOR">
+            <div class="logos"> 
+                <img class="logoCHUBB" src="https://www.chubb.com/content/dam/chubb-sites/chubb/us-en/home_page/CHUBB_Logo_Black_RBG.png" alt="logo CHUBB">
+            </div>
             <h1>Descubra o impacto real de uma fatura NÃO paga para a sua empresa</h1>
             <div class="slider-container">
                 Faturamento Anual: R$ <span id="faturamentoOutput">0</span><br>
-                <input type="range" min="100000000" max="10000000000" step="5000000" value="100000000" id="faturamentoSlider">
+                <input type="range" min="200000000" max="10000000000" step="5000000" value="100000000" id="faturamentoSlider">
             </div>
 
             <div class="slider-container">
@@ -42,7 +44,8 @@
             </div>
             <button onclick="calculate()">Calcular</button><br><br>
             <div class="divPower">
-                <div class="power">Powered by <b>Chubb</b> em parceria com <b>WGA Advisors</b></div>
+                <div class="power">Powered by <b>WGA Advisors</b></div>
+                <div class="partner"><h6>In partnership with</h6><img class="logoTAILOR" src="imgs/Corporate.svg" alt="logo TAILOR"></div>
                 <!-- <a href="https://www.wgaadvisors.com.br"><img class="logoWGA" src="imgs/logoWGA.svg" alt="logo WGA Group"></a>-->
             </div>
         </div>
@@ -91,7 +94,11 @@
             <div id="result"></div>
             <button id="novoCalculo" onclick="fechaModal()">Novo Calculo</button>
             <h6>Caso queira alavancar as vendas da sua empresa e reduzir riscos de inadimplência, <a class="linkDownload" href="docs/Questionário-TAILOR-TradeCredit.xlsx"><b>clique aqui</b></a>, preencha o questionário e entre em contato com seu corretor</h6>
-            <br><div class="power">Powered by <b>Chubb</b> em parceria com <b>WGA Advisors</b></div>
+            <div class="divPower">
+                <div class="power">Powered by <b>WGA Advisors</b></div>
+                <div class="partner"><h6>In partnership with</h6><img class="logoTAILOR" src="imgs/Corporate.svg" alt="logo TAILOR"></div>
+                <!-- <a href="https://www.wgaadvisors.com.br"><img class="logoWGA" src="imgs/logoWGA.svg" alt="logo WGA Group"></a>-->
+            </div>
         </div>
         <div class="descricao">
             <h1>Observações</h1>

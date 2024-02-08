@@ -15,7 +15,7 @@
     const myModal = document.getElementById("myModal");
     const myModalImpactos = document.getElementById("myModalImpactos");
     
-    faturamentoOutput.textContent = "100.000.000";
+    faturamentoOutput.textContent = "200.000.000";
 
     faturamentoSlider.oninput = function() {
         faturamentoOutput.textContent = formatValue(this.value);
